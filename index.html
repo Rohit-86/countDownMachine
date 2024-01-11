@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Set Countdown Timer</h1>
+      <div class="timer-option">
+        <label for="timerType">Choose Timer Type:</label>
+        <select id="timerType" onchange="selectTimerType()">
+          <option value="date">By Date</option>
+          <option value="time">By Time</option>
+        </select>
+      </div>
+      <div id="dateInput" style="display: none">
+        <h2>Select Date</h2>
+        <input type="date" id="specificDate" />
+        <input
+          type="text"
+          id="userMessageDate"
+          placeholder="Enter your message..."
+        />
+        <button onclick="startSpecificTimer()">Start Timer</button>
+      </div>
+      <div id="timeInput" style="display: none">
+        <h2>Set Duration</h2>
+        <input type="number" id="daysInput" placeholder="Days" />
+        <input type="number" id="hoursInput" placeholder="Hours" />
+        <input type="number" id="minutesInput" placeholder="Minutes" />
+        <input
+          type="text"
+          id="userMessageDuration"
+          placeholder="Enter your message..."
+        />
+        <button onclick="startTimer()">Start Timer</button>
+      </div>
+      <div class="timer" style="display: none">
+        <h2>Countdown Timer</h2>
+        <div class="time-section">
+          <h1 id="day">00</h1>
+          <p>Days</p>
+        </div>
+        <div id="messageSection" style="display: none">
+          <h2>Your Message:</h2>
+          <p id="userMessageDisplay"></p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
